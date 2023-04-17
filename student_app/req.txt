@@ -1,0 +1,17 @@
+1. Create 4 tables
+     courses - course_name, duration, active/inactive flag
+     students - first_name, last_name, dob
+     course_schedule - course_id, start_date, end_date, total_seats
+     enrolled - student_id, course_schedule_id, status
+
+2. Add few dummy 
+
+Create APIs for below:
+Add students
+Add courses
+Update student name
+Add course_schedule
+Enroll students to a course
+Delete a student from already enrolled course
+Update status flag of enrolled students
+Get array of students enrolled to a course

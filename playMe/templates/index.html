@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    </head>
+    <body>
+        <h1>Hello {{name}}, Welcome to Flask templates!</h1>
+        {% block content %}
+            <form method="post">
+            <label for="url">Enter URL</label>
+            <input type="url" name="url" value="" required>
+            <label for="shortcode">Enter Name</label>
+            <input type="text" name="shortcode" value="" required>
+            <input type="submit" value="Submit">
+            </form>
+        {% endblock %}
+    </body>
+</html>

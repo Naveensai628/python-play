@@ -1,0 +1,91 @@
+{% extends 'home.html' %}
+
+{% block head %}
+<title>Enter student details:</title>
+{% endblock %}
+
+{% block body %}
+<h2><u>Display Screen</u></h2>
+<!-- {{list_std}} -->
+
+<br>
+
+<table id="students" class="table table-striped table-bordered" style="width:60%">
+<thead>
+<tr>
+<th>ID</th>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Date of birth</th>
+<th>creationDate</th>
+<th>lastUpdateDate</th>
+</tr>
+</thead>
+<tbody>
+    {% for a in list_std %}
+<tr>
+<td>{{a[0]}}</td>
+<td>{{a[1]}}</td>
+<td>{{a[2]}}</td>
+<td>{{a[3]}}</td>
+<td>{{a[4]}}</td>
+<td>{{a[5]}}</td>
+<td><a href="/student/delete/{{a[0]}}">delete</a></td>
+<td><a href="/student/update/{{a[0]}}">update</a></td>
+</tr>
+    {% endfor %}
+</tbody>
+</table>
+<br>
+
+<br>
+<table id="courses" class="table table-striped table-bordered" style="width:80%">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Course Name</th>
+    <th>Description</th>
+    <th>creationDate</th>
+    <th>lastUpdateDate</th>
+    <th>ActiveFlag</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for b in list_crs %}
+    <tr>
+    <td>{{b[0]}}</td>
+    <td>{{b[1]}}</td>
+    <td>{{b[2]}}</td>
+    <td>{{b[3]}}</td>
+    <td>{{b[4]}}</td>
+    <td>{{b[5]}}</td>
+    <td><a href="/course/delete/{{b[0]}}">delete</a></td>
+    <td><a href="/course/update/{{b[0]}}">update</a></td>
+    </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+<br>
+<h3>Enter student details to add:</h3>
+<form action="\student\add" method="POST">
+    <input type="text" placeholder="First Name" name="fname" id="fname">
+    <input type="text" placeholder="Last Name" name="lname" id="lname">
+    <input type="date" placeholder="date od birth" name="dateob" id="dateob">
+    <input type="submit" value="add std">
+</form>
+
+<br>
+<h3>Enter course details to add:</h3>
+<form action="\course\add" method="POST">
+    <input type="text" placeholder="Course name" name="cname" id="cname">
+    <input type="text" placeholder="description" name="desc" id="desc">
+    <!-- <input type="date" placeholder="active flag" name="activeflag" id="activeflag"> -->
+    <select id="activeflag" name="activeflag" placeholder="flag">
+        <option value=""></option>
+        <option value="Y">Y</option>
+        <option value="N">N</option>
+        
+      </select>
+    <input type="submit" value="add std">
+</form>
+{% endblock %}
