@@ -1,0 +1,22 @@
+<loop id="2000">
+    <segment id="CLM">
+        <data id="01" type="R" map="SEQ_ID"/>
+        <data id="02" type="R" map="CLM_ID"/>
+        <data id="05" type="S" map="ROLL_NUM"/>
+        <data id="15" type="R" map="MAP_ID"/>
+    </segment>
+    <segment id="HRC">
+        <data id="01" type="R" map="SEQ_ID"/>
+        <data id="02" type="S" map="CLM_ID"/>
+        <data id="05" type="S" map="ROLL_NUM"/>
+        <data id="07" type="R" map="MAP_ID"/>
+    </segment>
+    <loop id="2000A">
+        <segment id="APD">
+            <data id="01" type="S" map="SEQ_ID"/>
+            <data id="05" type="S" map="CLM_ID"/>
+            <data id="09" type="R" map="ROLL_NUM"/>
+            <data id="11" type="R" map="MAP_ID"/>
+        </segment>
+    </loop>    
+</loop>
